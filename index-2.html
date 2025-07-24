@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Music Video Player</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+    * {
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+      outline: none;
+    }
+    body {
+      font-size: 62.5%;
+      background-color: #FCF1F5;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .player {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    video.player__video {
+      width: 425px;
+      height: 240px;
+      background: black;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    .player-controls {
+      background-color: #fff;
+      border-radius: 15px;
+      width: 425px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      box-shadow: 0px 33px 90px 11px rgba(147,84,103,.6);
+    }
+    .song-info {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .song-info__title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #444b59;
+    }
+    .song-info__artist {
+      font-size: 1.2rem;
+      color: #a5a7af;
+    }
+    button {
+      height: 50px;
+      width: 50px;
+      margin: 0 10px;
+      border: none;
+      background-color: #fc8da8;
+      color: white;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    button:hover {
+      background-color: #ff7397;
+    }
+  </style>
+</head>
+<body>
+  <div class="player">
+    <div class="song-info">
+      <div class="song-info__title">Flying Deep In Night</div>
+      <div class="song-info__artist">Bensound</div>
+    </div>
+    <video class="player__video viewer" controls poster="https://i.ytimg.com/vi/Jqk9AFJbo2k/maxresdefault.jpg">
+      <source src="./audio/flying-deep-in-night.mp4" type="video/mp4" data-trackid="1">
+      Trình duyệt của bạn không hỗ trợ video.
+    </video>
+    <div class="player-controls">
+      <button class="backward">⏮</button>
+      <button class="play">▶</button>
+      <button class="forward">⏭</button>
+    </div>
+  </div>
+
+  <script>
+    const tracks = [
+      {
+        id: '1',
+        title: 'Flying Deep In Night',
+        artist: 'Lee Suhyun (AKMU), Onew (SHINee)',
+        src: './audio/flying-deep-in-night.mp4',
+        cover: 'https://i.ytimg.com/vi/Jqk9AFJbo2k/maxresdefault.jpg'
+      },
+      {
+        id: '2',
+        title: 'Summer',
+        artist: 'Bensound',
+        src: 'https://www.bensound.com/bensound-music/bensound-summer.mp3',
+        cover: 'https://www.bensound.com/bensound-img/summer.jpg'
+      },
+      {
+        id: '3',
+        title: 'Happy Rock',
+        artist: 'Bensound',
+        src: 'https://www.bensound.com/bensound-music/bensound-happyrock.mp3',
+        cover: 'https://www.bensound.com/bensound-img/happyrock.jpg'
+      }
+    ];
+
+    const video = document.querySelector('.player__video');
+    const videoSource = video.querySelector('source');
+    const playBtn = document.querySelector('.play');
+    const backBtn = document.querySelector('.backward');
+    const forwardBtn = document.querySelector('.forward');
+    const titleEl = document.querySelector('.song-info__title');
+    const artistEl = document.querySelector('.song-info__artist');
+
+    let currentTrack = 0;
+
+    function loadTrack(index) {
+      const track = tracks[index];
+      videoSource.src = track.src;
+      video.setAttribute('poster', track.cover);
+      video.load();
+      titleEl.textContent = track.title;
+      artistEl.textContent = track.artist;
+      playBtn.textContent = '▶';
+    }
+
+    function togglePlay() {
+      if (video.paused) {
+        video.play();
+        playBtn.textContent = '⏸';
+      } else {
+        video.pause();
+        playBtn.textContent = '▶';
+      }
+    }
+
+    function nextTrack() {
+      currentTrack = (currentTrack + 1) % tracks.length;
+      loadTrack(currentTrack);
+      video.play();
+      playBtn.textContent = '⏸';
+    }
+
+    function prevTrack() {
+      currentTrack = (currentTrack - 1 + tracks.length) % tracks.length;
+      loadTrack(currentTrack);
+      video.play();
+      playBtn.textContent = '⏸';
+    }
+
+    playBtn.addEventListener('click', togglePlay);
+    forwardBtn.addEventListener('click', nextTrack);
+    backBtn.addEventListener('click', prevTrack);
+    video.addEventListener('ended', nextTrack);
+
+    // Load initial track
+    loadTrack(currentTrack);
+  </script>
+</body>
+</html>
