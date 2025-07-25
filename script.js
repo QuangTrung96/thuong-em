@@ -482,11 +482,5 @@ audioElement.addEventListener('timeupdate', function(e) {
         $('#bemine').toggleClass('roEdgeUpIn hidden');
 
     }
-
-    if (nowTime > 246 && lastTime < 246) {
-
-        $('#beminee').toggleClass('roEdgeUpIn hidden');
-
-    }
     lastTime = nowTime;
 });
