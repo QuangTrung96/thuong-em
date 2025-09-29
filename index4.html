@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Thiệp Cưới</title>
+  <style>
+    body {
+      font-family: "Times New Roman", serif;
+      background: #f8f8f8;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      display: flex;
+      background: #fff;
+      width: 820px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .left, .right {
+      width: 50%;
+      padding: 30px;
+      background: #fff;
+    }
+    .left {
+      border-right: 1px solid #f0f0f0;
+    }
+    .title {
+      text-align: center;
+      font-size: 21px;
+      margin-bottom: 20px;
+      color: #c94f7c;
+    }
+    .highlight {
+      color: #c94f7c;
+      font-weight: bold;
+    }
+    .center {
+      text-align: center;
+    }
+    .date {
+      font-size: 21px;
+      color: #fff;
+      background: #c94f7c;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px auto;
+    }
+    .footer {
+      text-align: center;
+      font-style: italic;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+    /* chỉnh riêng phần gia đình */
+    .families {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      font-size: 15px;
+    }
+    .family {
+      width: 48%;
+    }
+    .family b {
+      display: block;
+      margin-bottom: 5px;
+      text-align: center;
+      color: #c94f7c;
+    }
+    .family p {
+      margin: 2px 0;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Trang bên trái -->
+    <div class="left">
+      <div class="center">
+        <h2>- Happy Wedding -</h2>
+        <h1 class="highlight">L ♥ T</h1>
+      </div>
+      <p class="center"><b>TRÂN TRỌNG KÍNH MỜI</b></p>
+      <p class="center">
+        Tới dự bữa cơm thân mật chung vui cùng gia đình chúng tôi <br>
+        <b>vào hồi 17 giờ 00’ - THỨ NĂM</b><br>
+        Ngày 02 tháng 10 năm 2025 <br>
+        (Tức ngày 11 tháng 08 năm Ất Tỵ)
+      </p>
+      <p class="center highlight">Tại gia đình nhà Gái</p>
+      <p class="footer">Sự hiện diện của Quý khách là niềm vinh hạnh đối với gia đình chúng tôi!</p>
+    </div>
+
+    <!-- Trang bên phải -->
+    <div class="right">
+      <p class="center"><b>TRÂN TRỌNG KÍNH MỜI</b></p>
+	  <p class="center"><em><b>Em Minh</b></em></p>
+      <p class="center">Tới dự LỄ THÀNH HÔN của hai em chúng tôi</p>
+      <h2 class="center highlight">Phạm Thu</h2>
+	  <h2 class="center highlight">💕</h2>
+      <h2 class="center highlight">Quang Lãm</h2>
+      <p class="center">Được tổ chức vào hồi <b>13 giờ 00’</b></p>
+      <div class="center">
+        <p>THỨ SÁU</p>
+        <div class="date">03</div>
+        <p>THÁNG 10<br>2025</p>
+        <p>(Tức ngày 12 tháng 08 năm Ất Tỵ)</p>
+      </div>
+      <p class="center highlight">Tại gia đình nhà Trai</p>
+      <p class="center">Rất hân hạnh được đón tiếp!</p>
+
+      <!-- Nhà gái & Nhà trai chia 2 bên -->
+      <div class="families">
+        <div class="family">
+          <b>Nhà gái</b>
+          <p>Bố: PHẠM VĂN QUYẾT</p>
+          <p>Mẹ: NGUYỄN THỊ THÊU</p>
+          <p class="center">Thôn Đức Hỷ - Cẩm Giàng</p>
+          <p class="center">Hải Phòng</p>
+        </div>
+        <div class="family">
+          <b>Nhà trai</b>
+          <p>Bố: NGUYỄN VĂN LẠI</p>
+          <p>Mẹ: NGUYỄN THỊ THẮM</p>
+          <p class="center">Thôn Đức Hỷ - Cẩm Giàng</p>
+          <p class="center">Hải Phòng</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

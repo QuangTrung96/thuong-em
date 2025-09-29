@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Thiệp Cưới</title>
+  <style>
+    body {
+      font-family: "Times New Roman", serif;
+      background: #f8f1f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .card {
+      display: flex;
+      width: 950px;
+      height: auto;
+      background: #fff;
+      border: 6px solid #f3d6d6;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.15);
+      overflow: hidden;
+    }
+    .page {
+      width: 50%;
+      padding: 40px 30px;
+      box-sizing: border-box;
+      border-right: 2px solid #f3d6d6;
+      position: relative;
+    }
+    .page:last-child {
+      border-right: none;
+    }
+    .page::before {
+      content: "";
+      position: absolute;
+      top: 20px; left: 20px; right: 20px; bottom: 20px;
+      border: 1px solid #e5c7c7;
+      pointer-events: none;
+    }
+    h2, h3, h4 {
+      margin: 10px 0;
+      text-align: center;
+    }
+    .invite {
+      text-align: center;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+    }
+    .names {
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      margin: 20px 0;
+      color: #b71c1c;
+    }
+    .and {
+      font-family: "Brush Script MT", cursive;
+      font-size: 28px;
+      font-weight: normal;
+      color: #000;
+    }
+    .section {
+      margin-top: 15px;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    .highlight {
+      color: #2e7d32;
+      font-weight: bold;
+    }
+    .event-time {
+      text-align: center;
+      font-size: 16px;
+      margin-top: 15px;
+      line-height: 1.6;
+    }
+    .date-box {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .date-box .day {
+      font-size: 42px;
+      font-weight: bold;
+      color: #2e7d32;
+    }
+    .date-box .month {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .footer {
+      margin-top: 25px;
+      text-align: center;
+      font-style: italic;
+      font-size: 14px;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Trang trái -->
+    <div class="page">
+      <div class="invite">
+        <p>TRÂN TRỌNG KÍNH MỜI</p>
+        <h3>Bạn Trung</h3>
+        <p>TỚI DỰ BỮA CƠM THÂN MẬT<br>MỪNG HẠNH PHÚC CÙNG GIA ĐÌNH CHÚNG TÔI</p>
+      </div>
+      <div class="names">
+        TOÀN THẮNG <br><span class="and">and</span><br>THU NGA
+      </div>
+      <div class="event-time">
+        ĐƯỢC TỔ CHỨC VÀO LÚC:<br>
+        <b>11 giờ 00</b> | CHỦ NHẬT, NGÀY 29 . 10 . 2023<br>
+        (TỨC NGÀY 15 THÁNG 09 NĂM QUÝ MÃO)
+      </div>
+      <div class="event-time">
+        TẠI: <span class="highlight">TƯ GIA NHÀ TRAI</span><br>
+        12/71 NGUYỄN LƯƠNG BẰNG - TP. HẢI DƯƠNG
+      </div>
+      <div class="event-time" style="margin-top:25px;font-weight:bold;">
+        RẤT HÂN HẠNH ĐƯỢC ĐÓN TIẾP!
+      </div>
+    </div>
+
+    <!-- Trang phải -->
+    <div class="page">
+      <div class="section">
+        <b>Nhà Trai</b><br>
+        Ông: Nguyễn Thế Quyền<br>
+        Bà: Đinh Thị Phượng<br>
+        12/71 Nguyễn Lương Bằng - TP. Hải Dương
+      </div>
+      <div class="section">
+        <b>Nhà Gái</b><br>
+        Ông: Trần Văn Tạo<br>
+        Bà: Nguyễn Thị Tâm<br>
+        Xóm 8 - Liên Huy - Gia Thịnh<br>
+        Gia Viễn - Ninh Bình
+      </div>
+      <h3 style="co
