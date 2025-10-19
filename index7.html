@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>20/10/2025</title>
+        <style>
+            body{
+            margin: 0;
+            padding: 0;
+            background-color: #95d0ff;
+            overflow: hidden;
+            }
+            .container{
+            position: absolute;
+            margin: auto;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width:350px;
+            height:510px;
+            }
+            /* === MẶT TRỜI === */
+            .sun{
+            height: 0;
+            width: 0;
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            }
+            .circle{
+            height: 44px;
+            width: 44px;
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            background-color: #ff0;
+            border-radius: 50%;
+            }
+            .sunrays{
+            height: 50px;
+            width: 50px;
+            position: relative;
+            background-color: #ffdd4a;
+            box-shadow: 0 0 20px 3px #ff8,
+            0 0 80px 10px #ff6;
+            animation: rotate 12s linear infinite;
+            }
+            @keyframes rotate{
+            100%{transform: rotate(360deg);}
+            }
+            .sunrays:before,
+            .sunrays:after{
+            content: '';
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            background-color: #ffdd4a;
+            }
+            .sunrays:before{ transform: rotate(30deg); }
+            .sunrays:after{ transform: rotate(60deg); }
+            /* === BÓNG, CHẬU, HOA === */
+            .shadow{
+            position: absolute;
+            width: 110px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0,0.1);
+            bottom: 95px;
+            left: 135px;
+            }
+            .pot{
+            position: absolute;
+            width: 70px;
+            height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;	
+            border-top: 60px solid #FF7043;
+            bottom: 104px;
+            left: 125px;
+            z-index: 2;
+            }
+            .pot:before{
+            position: absolute;
+            content: '';
+            width: 87px;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;	
+            border-top: 9px solid #F4511E;
+            top: -60px;
+            left: -12px;
+            }
+            .pot:after{
+            position: absolute;
+            content: '';
+            width: 110px;
+            height: 18px;
+            top: -78px;
+            left: -20px;
+            border-radius: 5px;
+            background-color: #FF7043;
+            }
+            /* === NƯỚC === */
+            .water-jar{
+            position: absolute;
+            width: 40px;
+            height: 55px;
+            background-color: #c5f;
+            border-radius: 5px;
+            bottom: 235px;
+            left: 65px;
+            opacity: 0;
+            box-shadow: inset -9px 0 15px #cc70ff;
+            animation: show 10s linear;
+            }
+            @keyframes show{
+            5%{opacity: 1;}
+            7%{transform: rotate(40deg);}
+            24%{opacity: 1;}
+            25%{opacity: 0;}
+            }
+            .water-jar:before{
+            position: absolute;
+            content: '';
+            width: 15px;
+            height: 0;
+            left: 40px;
+            top: 5px;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;	
+            border-bottom: 40px solid #c6f;
+            transform: rotate(65deg);
+            }
+            .water-jar:after{
+            position: absolute;
+            content: '';
+            width: 20px;
+            height: 30px;
+            top: 5px;
+            left: -20px;
+            border-radius: 20px 0 0 20px;
+            background-color: transparent;
+            border: 5px solid #c5f;
+            box-shadow: 70px -4px 0 -6px #c6f;
+            }
+            .water{
+            position: absolute;
+            width: 20px;
+            height: 50px;
+            border-radius: 50% 50% 0 0;
+            border-right: 4px dashed #0bf;
+            bottom: 180px;
+            left: 115px;
+            z-index: 1;
+            opacity: 0;
+            animation: water 10s linear;
+            }
+            @keyframes water{
+            7%{opacity: 0;}
+            8%{opacity: 1;}
+            21%{opacity: 1;}
+            22%{opacity: 0;}
+            }
+            .water:before, .water:after{
+            position: absolute;
+            content: '';
+            border-right: 4px dashed #0bf;
+            z-index: 1;
+            }
+            .water:before{
+            width: 45px;
+            height: 52px;
+            top: -2px;
+            left: -10px;
+            border-radius: 70% 80% 20% 0;
+            }
+            .water:after{
+            width: 65px;
+            height: 62px;
+            top: -10px;
+            left: -10px;
+            border-radius: 70% 90% 28% 0;
+            }
+            /* === HOA === */
+            .flower{
+            position: absolute;
+            bottom: 180px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 50px;
+            transform: rotate(180deg);
+            }
+            .stem{
+            position: absolute;
+            left: 25px;
+            width: 5px;
+            height: 0px;
+            background: linear-gradient(-90deg, #0d0, #0a0);
+            animation: grow 10s linear forwards;
+            }
+            @keyframes grow{
+            25%{height: 0;}
+            34%{height: 22px;}
+            39%{height: 22px;}
+            41%{height: 27px;}
+            45%{height: 27px;}
+            52%{height: 92px;}
+            55%{height: 94px;}
+            100%{height: 120px;}
+            }
+            .leaf{
+            position: absolute;
+            width: 25px;
+            top: -10px;
+            left: 18px;
+            height: 38px;
+            border-radius: 1% 100%;
+            background: linear-gradient(70deg, #0e0, #0a0);
+            transform-origin: bottom;
+            transform: rotate(-110deg);
+            animation: leaf-1 10s linear;
+            }
+            @keyframes leaf-1{
+            0%{transform: scaleY(0) rotate(-180deg);}
+            38%{transform: scaleY(0) rotate(-110deg);}
+            50%{transform: scaleY(1) rotate(-110deg);}
+            }
+            .leaf:before{
+            position: absolute;
+            content: '';
+            top: 18px;
+            left: -33px;
+            width: 30px;
+            height: 45px;
+            border-radius: 1% 100%;
+            background: linear-gradient(70deg, #0e0, #0a0);
+            transform: rotate(110deg);
+            animation: leaf-2 10s linear;
+            }
+            @keyframes leaf-2{
+            0%{transform: scaleY(0) rotate(110deg);}
+            45%{transform: scaleY(0) rotate(110deg);}
+            52%{transform: scaleY(1) rotate(110deg);}
+            }
+            .leaf:after{
+            position: absolute;
+            content: '';
+            top: -20px;
+            left: -60px;
+            width: 25px;
+            height: 35px;
+            border-radius: 1% 100%;
+            background: linear-gradient(70deg, #0e0, #0a0);
+            transform-origin: bottom;
+            animation: leaf-3 10s linear;
+            }
+            @keyframes leaf-3{
+            0%{transform: scaleY(0);}
+            55%{transform: scaleY(0);}
+            72%{transform: scaleY(1);}
+            }
+            .dot{
+            position: absolute;
+            top: 147px;
+            left: 24px;
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            background-color: #f8d545;
+            box-shadow: 0 0 0 4px #d85,
+            0 0 8px 4px #444,
+            inset 0 0 8px #fd0;
+            opacity: 0;
+            animation: flower 10s linear forwards;
+            }
+            @keyframes flower{
+            72%{opacity: 0;}
+            74%{opacity: 1;}
+            100%{opacity: 1;}
+            }
+            .petal{
+            position: absolute;
+            width: 0px;
+            height: 40px;
+            border-radius: 100% 0% 50% 50% /50% 0% 100% 50%;
+            background: linear-gradient(185deg,#941346 0%,#E63B94 50%,#FF5AB0 75%,#FF7DC1 100%);
+            opacity: 0;
+            animation: petal 10s linear forwards;
+            }
+            @keyframes petal{
+            72%{opacity: 0;}
+            84%{opacity: 1; width: 40px;}
+            100%{opacity: 1; width: 40px;}
+            }
+            .petal-1{top: 155px; left: -9px;}
+            .petal-2{top: 125px; left: -18px; transform: rotate(60deg);}
+            .petal-3{top: 105px; left: 5px; transform: rotate(120deg);}
+            .petal-4{top: 110px; left: 35px; transform: rotate(180deg);}
+            .petal-5{top: 140px; left: 42px; transform: rotate(240deg);}
+            .petal-6{top: 160px; left: 18px; transform: rotate(300deg);}
+        </style>
+        <!-- === CHIM BAY === -->
+        <style>
+            .bird {
+            position: absolute;
+            width: 100px;
+            opacity: 0.9;
+            z-index: 10;
+            }
+            .bird img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.2));
+            }
+            /* Giai đoạn 1: Hai chim bay lại gần nhau */
+            @keyframes approach1 {
+            0% { transform: translateX(-200px) translateY(0); }
+            40% { transform: translateX(600px) translateY(0); }
+            45% { transform: translateX(650px) translateY(-10px); } /* chạm */
+            50% { transform: translateX(650px) translateY(-10px); } /* tạm dừng khi chạm */
+            100% { transform: translateX(650px) translateY(-10px); }
+            }
+            @keyframes approach2 {
+            0% { transform: translateX(200px) translateY(0); }
+            40% { transform: translateX(-600px) translateY(0); }
+            45% { transform: translateX(-650px) translateY(10px); } /* chạm */
+            50% { transform: translateX(-650px) translateY(10px); } /* tạm dừng */
+            100% { transform: translateX(-650px) translateY(10px); }
+            }
+            /* Giai đoạn 2: Sau khi chạm, cả hai cùng bay tròn quanh điểm giữa */
+            @keyframes circleFly1 {
+            0% { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+            }
+            @keyframes circleFly2 {
+            0% { transform: rotate(180deg) translateX(120px) rotate(0deg); }
+            100% { transform: rotate(540deg) translateX(120px) rotate(-360deg); }
+            }
+            /* Khung vùng xoay */
+            .sky {
+            position: absolute;
+            top: 160px;
+            left: 50%;
+            width: 0;
+            height: 0;
+            transform: translateX(-50%);
+            animation: startCircle 25s linear infinite;
+            }
+            @keyframes startCircle {
+            0%, 45% { transform: translateX(-50%) scale(0); } /* chờ hai chim đến gần */
+            50% { transform: translateX(-50%) scale(1); }
+            100% { transform: translateX(-50%) scale(1); }
+            }
+            /* Chim 1 */
+            .bird1 {
+            top: 120px;
+            left: 0;
+            animation: approach1 10s ease-in forwards,
+            circleFly1 10s linear 10s infinite;
+            }
+            /* Chim 2 */
+            .bird2 {
+            top: 120px;
+            right: 0;
+            animation: approach2 10s ease-in forwards,
+            circleFly2 10s linear 10s infinite;
+            }
+            .bird2 img {
+            transform: scaleX(-1);
+            }
+            /* Chim 3 */
+            .bird3 {
+            top: 120px;
+            left: 0;
+            animation: approach1 10s ease-in forwards,
+            circleFly1 10s linear 10s infinite;
+            }
+        </style>
+        <style>
+        /* === ĐÁM MÂY & LỜI CHÚC === */
+        .cloud-message {
+        position: absolute;
+        top: 100px;
+        left: -400px;
+        opacity: 0;
+        z-index: 20;
+        }
+
+        /* Đám mây 1 — xuất hiện sau 30s */
+        .cloud1 {
+        animation: showCloud1 30s linear forwards;
+        animation-delay: 20s;
+        }
+
+        /* Đám mây 2 — xuất hiện sau 60s */
+        .cloud2 {
+        top: 180px; /* thấp hơn đám 1 một chút */
+        animation: showCloud2 35s linear forwards;
+        animation-delay: 40s;
+        }
+
+        .cloud {
+        width: 200px;
+        height: 60px;
+        background: #fff;
+        border-radius: 50px;
+        position: relative;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        .cloud::before, .cloud::after {
+        content: '';
+        position: absolute;
+        background: #fff;
+        width: 100px;
+        height: 100px;
+        top: -40px;
+        border-radius: 50%;
+        }
+        .cloud::before { left: 10px; }
+        .cloud::after { right: 10px; }
+
+        .message {
+        position: absolute;
+        top: 70px;
+        left: 30px;
+        font-size: 22px;
+        color: #444;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+        }
+
+        /* === Hiệu ứng di chuyển đám mây === */
+        @keyframes showCloud1 {
+        0% { opacity: 0; transform: translateX(0); }
+        10% { opacity: 1; transform: translateX(150px); }
+        80% { opacity: 1; transform: translateX(800px); }
+        100% { opacity: 0; transform: translateX(1000px); }
+        }
+        @keyframes showCloud2 {
+        0% { opacity: 0; transform: translateX(0); }
+        10% { opacity: 1; transform: translateX(150px); }
+        80% { opacity: 1; transform: translateX(800px); }
+        100% { opacity: 0; transform: translateX(1000px); }
+        }
+        </style>
+
+    </head>
+    <body>
+        <!-- === ĐÁM MÂY & LỜI CHÚC 1 === -->
+        <div class="cloud-message cloud1">
+        <div class="cloud"></div>
+        <div class="message">Chúc em ngày mới tốt lành 💖</div>
+        </div>
+
+        <!-- === ĐÁM MÂY & LỜI CHÚC 2 === -->
+        <div class="cloud-message cloud2">
+        <div class="cloud"></div>
+        <div class="message">Luôn mỉm cười và hạnh phúc nhé 🌸🌸🌸</div>
+        </div>
+
+        <div class="sky">
+            <div class="bird bird1">
+                <img src="brid1.png" alt="bird1">
+            </div>
+            <div class="bird bird3">
+                <img src="brid2.png" alt="bird2">
+            </div>
+        </div>
+        <div class="bird bird1"><img src="brid1.png" alt="bird1"></div>
+        <div class="bird bird2"><img src="brid3.png" alt="bird3"></div>
+        <div class="container">
+            <div class="sun">
+                <div class="sunrays"></div>
+                <div class="circle"></div>
+            </div>
+            <div class="shadow"></div>
+            <div class="pot"></div>
+            <div class="water-jar"></div>
+            <div class="water"></div>
+            <div class="flower">
+                <div class="stem"></div>
+                <div class="leaf"></div>
+                <div class="petal petal-1"></div>
+                <div class="petal petal-2"></div>
+                <div class="petal petal-3"></div>
+                <div class="petal petal-4"></div>
+                <div class="petal petal-5"></div>
+                <div class="petal petal-6"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    <audio id="bg-music" src="./data/2010.mp3" autoplay loop muted></audio>
+
+    <button id="play-music-btn" style="
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        padding: 10px 15px;
+        background: pink;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    ">
+        🎵 Bật nhạc
+    </button>
+
+    <script>
+        const music = document.getElementById("bg-music");
+        const btn = document.getElementById("play-music-btn");
+
+        btn.addEventListener("click", () => {
+            music.muted = false;
+            music.play();
+            btn.style.display = "none"; // Ẩn nút sau khi bật nhạc
+        });
+    </script>
+    </body>
+</html>
